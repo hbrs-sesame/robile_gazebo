@@ -19,7 +19,7 @@
     <arg name="start_rviz" default="true"/>
     <arg name="rviz_config" default="$(find robile_gazebo)/config/rviz/robile.rviz"/>
 
-    <group ns="$(arg robot_name_1)">
+    <include file="$(find robile_gazebo)/launch/platform_independent/world.launch" pass_all_args="true"/>
     <!-- launch robot in Gazebo -->
         <param if="$(arg use_kelo_tulip)" name="robot_description"
             command="$(find xacro)/xacro '$(find robile_description)/gazebo/gazebo_robile_laser_scanner.xacro' platform_config:=$(arg platform_config)"/>
@@ -56,6 +56,7 @@
             <node name="robile_ros_controller_spawner" pkg="controller_manager" type="spawner" output="screen" 
             args="joint_state_controller $(arg hub_wheel_controller_list)" />
         </group>
+    <group ns="$(arg robot_name_1)">
     </group>	
 
 </launch>
