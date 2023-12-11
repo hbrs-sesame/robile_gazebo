@@ -3,8 +3,8 @@
 <launch>
     <!-- GAZEBO SETUP ARGUMENTS -->
     <arg name="use_sim_time" default="true"/>
-    <arg name="gazebo_gui" default="false"/>
-    <arg name="headless" default="true"/>
+    <arg name="gazebo_gui" default="true"/>
+    <arg name="headless" default="false"/>
     <arg name="debug" default="false"/>
     <arg name="paused" default="false"/>
     <arg name="world_name" default="worlds/willowgarage.world"/>
