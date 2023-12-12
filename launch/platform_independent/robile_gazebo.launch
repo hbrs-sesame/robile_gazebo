@@ -15,10 +15,6 @@
     <arg name="init_pos_z" default="0.0"/>
     <arg name="init_yaw" default="0.0"/>
 
-    <!-- RViz startup options -->
-    <arg name="start_rviz" default="true"/>
-    <arg name="rviz_config" default="$(find robile_gazebo)/config/rviz/robile.rviz"/>
-
     <!-- <include file="$(find robile_gazebo)/launch/platform_independent/world.launch" pass_all_args="true"/> -->
     <!-- launch robot in Gazebo -->
         <param if="$(arg use_kelo_tulip)" name="robot_description"
@@ -39,8 +35,6 @@
             <param name="publish_frequency" type="double" value="30.0" />
         </node>
 
-        <!-- (Optional) Start RViz -->
-        <node pkg="rviz" type="rviz" name="robile_rviz" args="-d $(arg rviz_config)" if="$(arg start_rviz)"/>
         
         <group if="$(arg use_kelo_tulip)">
             <!-- Load joint controller configurations from YAML file to parameter server -->

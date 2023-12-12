@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!-- RViz startup options -->
+    <arg name="start_rviz" default="true"/>
+    <arg name="rviz_config" default="$(find robile_gazebo)/config/rviz/robile.rviz"/>
+
+    <!-- Start RViz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_config)" if="$(arg start_rviz)"/>
+
+</launch>
